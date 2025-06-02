@@ -135,6 +135,15 @@ app.get('/api/convenience', async (req, res) => {
   }
 });
 
+// ✅ 전체 가로등 데이터 반환 API
+app.get('/api/streetlamps/all', (req, res) => {
+  res.json({
+    count: streetlampData.length,
+    lamps: streetlampData
+  });
+});
+
+
 // ✅ 서버 시작
 app.listen(PORT, () => {
   console.log(`✅ API Server running on port ${PORT}`);
